@@ -1,0 +1,141 @@
+<!-- plagiarism declaration -->
+<!--Please Note: I used the same project I submitted on my capstone project Task 7 with HTML and CSS. I now added javascript functionality to it -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart Items</title>
+    <!-- link to my styles.css -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+
+    <!-- link to jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- link to bootstrap  with font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- please note: I added my javascript file at the bottom because I have another javacript file here below -->
+</head>
+<body onload="getCartItems()">
+    <!-- showing items in cart -->
+    <div class="firstHeader">
+        <a href="home.html" class="gadgetIcon"><i class="fa fa-microchip"></i><b>Gadget Pro</b></i></a>
+    </div>
+    <header class="productCatalogue">
+        <div class="overlay"></div>
+        <nav class="productNav">
+            <ul>
+                <li class="shipping">
+                <h1>Cart Items</h1>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- table showing data from localstorage -->
+    <!-- when you mouse over the table, chained effect of color change is gonna take place -->
+    <div class="cartBox">
+        <div class="totalCart">
+            <table class="cartTable" onmouseover="chainedEffect()"></table>
+        </div>
+    </div>
+
+     <!-- discount coupons section starts here -->
+     <section>
+        <div class="dropdown">
+            <h3 class="discountLabel">Select Discount Code And Enter It Under Coupons</h3>
+            <select>
+                <option value="CODE1" class="dropdown">CODE1</option>
+                <option value="CODE2" class="dropdown">CODE2</option>
+                <option value="CODE3" class="dropdown">CODE3</option>
+            </select>
+        </div>
+
+        <form>
+            <div class="form-group"> <h3 class="discountLabel">Coupons</h3>
+                <div class="input-group">
+                    <input type="text" name="discountText" class="form-control" height="100px" > 
+                    <button type="button" class="validate" 
+                    onclick="discountCoupons(document.getElementsByName('discountText')[0].value)">Validate Coupon</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- discount coupons section starts here -->
+
+    <!-- Delivery section starts here -->
+    <section class="delivery">
+        <h3 class="discountLabel">Delivery Options</h3>
+        <form>
+            <div class="dropdown">
+                <h3 class="discountLabel">Select Delivery Method</h3>
+                <select>
+                    <option value="collection" id="dropdown">Collection</option>
+                    <option value="delivery" id="dropdown">Delivery</option>
+                </select>
+            </div>
+        </form>
+
+        <h2 class="cartItemsHeading"> <span>Your </span><b>Details:</b></h2>
+        <form>
+            <div class="inputBox">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="Your Cell Number">
+            </div>
+    
+            <textarea placeholder="Brief description of your parcel" cols="30" rows="10"></textarea>
+        </form>
+        <button type="button" class="submitButton" onclick="onClickConfirmOrder()">Confirm Order</button>
+        <h2>Reference Number</h2>
+        <p id="referenceNumber" class="referenceNumber"></p>
+    </section>
+    <!-- Delivery section ends here -->
+
+    <!-- footer section starts here -->
+    <section class="footer">
+        <div class="box-container">
+    
+            <div class="box">
+                <p class="links">Social Media:</p>
+                <div class="socialLinks">
+                    <a href="https://www.facebook.com/" class="btn fab fa-facebook-f">Facebook</a>
+                    <a href="https://twitter.com/?lang=en" class="btn fab fa-twitter">Twitter</a>
+                    <a href="https://www.instagram.com/?hl=en" class="btn fab fa-instagram">Instagram</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <p class="links">Quick Links</p>
+                <div class="pageLinks">
+                    <a href="aboutUs.html">About |</a>
+                    <a href="catalogue.html">Catalogue |</a>
+                    <a href="shipping.html">Shipping </a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <p class="links">Download App</p>
+                <div class="downloadLinks">
+                    <a href="https://play.google.com/store"><b>GOOGLE PLAY</b></a>
+                    <a href="https://www.microsoft.com/en-us/download/default.aspx"><b>WINDOWS 10 & ABOVE</b></a>
+                    <a href="https://www.apple.com/app-store/"><b>APP STORE</b></a>
+                </div>
+            </div>
+        </div>
+        <h1 class="credit">Developed by: <span> Emmanuel Kaome</span> | 
+            Through <a href="https://www.hyperiondev.com/bootcamps/web-development/"><b>HyperionDev</b></a> </h1>
+    </section>
+    <!-- footer section ends here -->
+   
+    <p class="homeBtn"><a href="home.html">Home</a></p>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- link to javascript file -->
+    <script type="text/javascript" src="cart.js"></script>
+</body>
+</html>
